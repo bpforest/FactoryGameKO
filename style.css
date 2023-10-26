@@ -113,14 +113,11 @@ a:visited {
 }
 
 #patchfield {
+	line-height: 150%;
 	box-sizing: border-box;
 	margin-left: 250px;
 	padding: 20px;
 	background-color: #111;
-}
-
-#patchfield li {
-	margin-bottom: 5px;
 }
 
 .burger-check {
