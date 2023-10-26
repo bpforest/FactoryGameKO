@@ -72,28 +72,39 @@ a:visited {
   height: 100%;
   background-color: #222;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1;
   left: 0px;
+  z-index: 1;
 }
 
-.side-content {
-  margin: 20px;
+.sidebar .title {
+  width: 100%;
+  height: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
-.content {
-  padding: 20px;
-  margin-left: 250px;
+.sidebar .title .side-text {
+  margin-top: 25px;
+}
+
+.sidebar .content {
+  width: 100%;
+  height: 100%;
 }
 
 #patchList {
   list-style: none;
-  padding: 0;
+  padding: 20px;
+  overflow: auto;
+  height: 100%;
 }
 
 #patchList li {
   margin-bottom: 10px;
   cursor: pointer;
   user-select: none;
+  transition: .2s ease;
 }
 
 #patchList li:hover {
@@ -102,6 +113,12 @@ a:visited {
 
 #patchNote li {
   margin-bottom: 5px;
+}
+
+.patchfield {
+  z-index: 0;
+  padding: 20px;
+  margin-left: 250px;
 }
 
 .burger-check {
@@ -119,7 +136,7 @@ a:visited {
     transition: .3s ease;
   }
 
-  .content {
+  .patchfield {
     margin-left: 0px;
   }
 
