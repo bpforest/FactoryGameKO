@@ -76,6 +76,7 @@ a:visited {
 	color: rgb(242, 200, 0);
 	justify-content: center;
 	align-items: center;
+	user-select: none;
 }
 
 #patchList {
@@ -118,6 +119,10 @@ a:visited {
 	margin-left: 250px;
 	padding: 20px;
 	background-color: #111;
+}
+
+#disqus_thread {
+	margin-top: 50px;
 }
 
 .burger-check {
