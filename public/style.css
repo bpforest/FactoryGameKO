@@ -65,6 +65,7 @@ a:visited {
 	background-color: #222;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 	z-index: 1;
+	user-select: none;
 }
 
 .sidebar .title {
@@ -76,7 +77,6 @@ a:visited {
 	color: rgb(242, 200, 0);
 	justify-content: center;
 	align-items: center;
-	user-select: none;
 }
 
 #patchList {
@@ -87,30 +87,41 @@ a:visited {
 	overflow: auto;
 }
 
-#patchList details {
-	cursor: pointer;
-	user-select: none;
-}
-
-#patchList summary {
-	padding: 10px;
-}
-
 #patchList ul {
 	padding: 0px;
 }
 
+#patchList .selected {
+	background-color: #333;
+}
+
+#patchList .category {
+	color: #999;
+	margin: 10px;
+	margin-left: 20px;
+	font-size: 0.8rem;
+}
+
 #patchList li {
 	padding: 10px;
-	padding-left: 30px;
+	width: 230px;
+	height: 40px;
+	margin-left: 10px;
+	box-sizing: border-box;
 	cursor: pointer;
-	user-select: none;
-	transition: .2s ease;
 	list-style: none;
+	display: flex;
+	align-items: center;
+	border-radius: 6px;
+}
+
+#patchList svg {
+	fill: #d4d4d4;
+	margin-right: 10px;
 }
 
 #patchList li:hover {
-	text-shadow: 0px 0px 1rem white;
+	background-color: #333;
 }
 
 #patchfield {
