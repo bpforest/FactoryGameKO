@@ -104,9 +104,9 @@ a:visited {
 
 #patchList li {
 	padding: 10px;
-	width: 230px;
 	height: 40px;
 	margin-left: 10px;
+	margin-right: 10px;
 	box-sizing: border-box;
 	cursor: pointer;
 	list-style: none;
@@ -162,8 +162,8 @@ a:visited {
 		position: fixed;
 		z-index: 2;
 		padding: 8px 0;
-		right: 10px;
-		bottom: 10px;
+		right: 20px;
+		bottom: 20px;
 		user-select: none;
 		width: auto;
 		margin: 0;
@@ -175,7 +175,7 @@ a:visited {
 		height: 2px;
 		position: relative;
 		transition: all .2s ease-out;
-		width: 20px;
+		width: 25px;
 	}
 
 	.burger-icon .burger-sticks:before,
@@ -190,11 +190,11 @@ a:visited {
 	}
 
 	.burger-icon .burger-sticks:before {
-		top: 6px;
+		top: 8px;
 	}
 
 	.burger-icon .burger-sticks:after {
-		top: -6px;
+		top: -8px;
 	}
 
 	.burger-check:checked~.sidebar {
