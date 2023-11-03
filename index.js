@@ -6,19 +6,15 @@ const port = 3000
 app.use(express.static('public'))
 
 app.get('/:version', (req, res) => {
-    let version = req.params
-    fs.readdir(__dirname + "/public/assets/patches", (err, files) => {
-        if (err) {
-            console.error('폴더를 읽을 수 없습니다.', err)
-            return
-        }
-        if (files.includes(`${version["version"]}.md`)) {
-            console.log(`버전 요청됨: ${version["version"]}`)
-            res.sendFile(__dirname + "/public/index.html")
-        } else {
-            res.sendFile(__dirname + "/public/404.html")
-        }
-    })
+    const version = req.params.version
+    const rel = req.query.rel
+    if (rel) {
+        console.log(`버전: ${version}, 릴리즈: ${rel}`)
+        res.sendFile(__dirname + "/public/index.html")
+    } else {
+        console.log(`버전: ${version}, 릴리즈 요청 없음`)
+        res.sendFile(__dirname + "/public/404.html")
+    }
 })
 
 app.listen(port, () => {
