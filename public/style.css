@@ -24,6 +24,21 @@ body {
 	color: white;
 	margin: 0;
 	background-color: #111;
+	--main-color: rgb(242, 200, 0);
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	background-color: #1A1B1E;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 3px;
+	background-color: #2B2D31;
 }
 
 a {
@@ -48,8 +63,7 @@ a:visited {
 	font-size: 1rem;
 	width: 250px;
 	height: 100vh;
-	background-color: #222;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	background-color: #2B2D31;
 	z-index: 1;
 	user-select: none;
 }
@@ -60,7 +74,7 @@ a:visited {
 	height: 100px;
 	font-size: 1.8rem;
 	font-weight: bold;
-	color: rgb(242, 200, 0);
+	color: var(--main-color);
 	justify-content: center;
 	align-items: center;
 	text-align: center;
@@ -79,7 +93,7 @@ a:visited {
 }
 
 #patchList .selected {
-	background-color: #333;
+	background-color: #404249 !important;
 }
 
 #patchList .category {
@@ -104,13 +118,13 @@ a:visited {
 	border-radius: 6px;
 }
 
+#patchList li:hover {
+	background-color: #35373C;
+}
+
 #patchList svg {
 	fill: #d4d4d4;
 	margin-right: 10px;
-}
-
-#patchList li:hover {
-	background-color: #333;
 }
 
 #patchfield {
@@ -118,7 +132,11 @@ a:visited {
 	box-sizing: border-box;
 	margin-left: 250px;
 	padding: 20px;
-	background-color: #111;
+	background-color: #313338;
+}
+
+#patchfield ul ::marker {
+	color: var(--main-color);
 }
 
 #disqus_thread {
