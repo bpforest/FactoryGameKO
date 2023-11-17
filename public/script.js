@@ -49,9 +49,30 @@ document.addEventListener("DOMContentLoaded", () => {
 			s.setAttribute('data-timestamp', + new Date());
 			(d.head || d.body).appendChild(s);
 		})();
+		document.head.querySelector("title").innerHTML = `${releaseName[callingRelease]} v${callingVersion} 패치 노트 - 새티스팩토리`
+	}
+
+	async function discord() {
+		const serverName = document.getElementById("serverName")
+		const userList = document.getElementById("userList")
+		const join = document.getElementById("join")
+		const role = document.getElementById("role")
+		const response = await fetch("https://discord.com/api/guilds/677453461519859733/widget.json")
+		const serverInfo = await response.json()
+		serverName.innerHTML += serverInfo["name"]
+		role.innerHTML = `개척자 — ${serverInfo["presence_count"]}`
+		for (const member of serverInfo["members"]) {
+			const user = document.createElement("li")
+			user.innerHTML = `
+			<img src=${member["avatar_url"]}>
+			<div class="name">${member["username"]}</div>
+			`
+			userList.appendChild(user)
+		}
 	}
 
 	// 첫 실행
+	discord()
 	patchToList()
 	if (window.location.pathname != "/") {
 		loadPatch()

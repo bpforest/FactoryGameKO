@@ -32,13 +32,28 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: 3px;
+	border-radius: 16px;
 	background-color: #1A1B1E;
 }
 
 ::-webkit-scrollbar-track {
-	border-radius: 3px;
-	background-color: #2B2D31;	
+	border-radius: 16px;
+	background-color: #2B2D31;
+}
+
+#patchfield::-webkit-scrollbar {
+	width: 16px;
+}
+
+#patchfield::-webkit-scrollbar-thumb {
+	border: 4px solid transparent;
+	background-clip: padding-box;
+}
+
+#patchfield::-webkit-scrollbar-track {
+	border: 4px solid transparent;
+	background-clip: padding-box;
+	border-radius: 16px;
 }
 
 a {
@@ -68,7 +83,90 @@ a:visited {
 	user-select: none;
 }
 
-.sidebar .title {
+#rightSideBar {
+	color: rgb(200, 200, 200);
+	right: 0;
+}
+
+#serverName {
+	color: white;
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	height: 100px;
+	padding: 15px;
+	justify-content: center;
+	text-align: center;
+}
+
+#serverName img {
+	border-radius: 16px;
+	margin-right: 16px;
+}
+
+#rightSideBar .button {
+	display: flex;
+	width: 100%;
+	height: 80px;
+	justify-content: center;
+	align-items: center;
+}
+
+#join {
+	color: white;
+	font-size: 16px;
+	font-family: "NSNeo";
+	background-color: #5865F2;
+	border-radius: 10px;
+	border: none;
+	width: 220px;
+	height: 50px;
+	box-sizing: border-box;
+	transition: .3s ease;
+	padding: 0;
+}
+
+#join:hover {
+	background-color: #7983e7;
+}
+
+#role {
+	font-size: 14px;
+	padding: 20px;
+	padding-bottom: 0;
+}
+
+#userList {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: auto;
+	flex: 1;
+}
+
+#userList li {
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 14px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+#userList .name {
+	color: #ffd175;
+	margin-left: 10px;
+}
+
+#userList img {
+	width: 32px;
+	border-radius: 100%;
+}
+
+#leftSideBar .title {
 	display: flex;
 	width: 100%;
 	height: 100px;
@@ -128,10 +226,14 @@ a:visited {
 }
 
 #patchfield {
+	position: fixed;
 	line-height: 150%;
 	box-sizing: border-box;
 	margin-left: 250px;
+	margin-right: 250px;
 	padding: 20px;
+	height: 100vh;
+	overflow: auto;
 }
 
 #patchfield ul ::marker {
@@ -152,14 +254,20 @@ a:visited {
 	}
 
 	.sidebar {
-		width: 100%;
-		height: 300px;
-		bottom: -300px;
 		transition: .3s ease;
 	}
 
+	#leftSideBar {
+		left: -250px;
+	}
+
+	#rightSideBar {
+		right: -250px;
+	}
+
 	#patchfield {
-		margin-left: 0px;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.burger-icon {
@@ -203,8 +311,8 @@ a:visited {
 		top: -8px;
 	}
 
-	.burger-check:checked~.sidebar {
-		bottom: 0px;
+	.burger-check:checked~#leftSideBar {
+		left: 0px;
 	}
 
 	.burger-check:checked~.burger-icon .burger-sticks {
