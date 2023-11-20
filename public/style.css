@@ -255,6 +255,23 @@ a:visited {
 	display: none;
 }
 
+.ad {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#adTop {
+	width: 100%;
+	height: 90px;
+}
+
+#adTopMobile {
+	display: none;
+	width: 100%;
+	height: 50px;
+}
+
 @media (max-width: 1000px) {
 	body {
 		font-size: 0.8em;
@@ -364,5 +381,13 @@ a:visited {
 	.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:before,
 	.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:after {
 		top: 0;
+	}
+
+	#adTop {
+		display: none;
+	}
+
+	#adTopMobile {
+		display: flex;
 	}
 }

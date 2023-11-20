@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		loadPatch()
 		document.getElementById(window.location.pathname.substring(1)).setAttribute("class", "selected")
 	} else {
-		patchNoteField.innerHTML = `
+		patchNoteField.innerHTML += `
 		<md-block src="assets/welcome.md"></md-block>
 		`
 	}
