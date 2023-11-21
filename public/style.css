@@ -130,24 +130,16 @@ a:visited {
 }
 
 .sidebar {
-	/* display: flex; */
-	flex-direction: column;
 	font-family: "NSNeo";
 	font-weight: normal;
-	font-size: 1rem;
-	/* flex: 0 0 250px; */
+	font-size: 16px;
 	width: 250px;
 	background-color: #2B2D31;
 	user-select: none;
 }
 
-#leftSideBar {
-	left: 0;
-}
-
 #rightSideBar {
 	color: rgb(200, 200, 200);
-	right: 0;
 }
 
 #userList .role {
@@ -286,10 +278,10 @@ a:visited {
 	}
 
 	#leftSideBar {
+		left: -250px;
 		position: fixed;
 		z-index: 1;
 		height: calc(100vh - 64px);
-		left: -250px;
 	}
 
 	#rightSideBar {
@@ -304,17 +296,9 @@ a:visited {
 		display: flex;
 		justify-content: space-between;
 	}
-	
+
 	#header .button {
 		display: none;
-	}
-
-	.burger {
-		display: flex;
-		flex: 0 0 64px;
-		height: 100%;
-		justify-content: center;
-		align-items: center;
 	}
 
 	#header .logo {
@@ -322,51 +306,48 @@ a:visited {
 		float: right;
 	}
 
-	.burger-icon {
-		width: 64px;
-		left: 10px;
-		cursor: pointer;
-		display: inline-block;
-		margin: 10px;
-		padding: 8px 0;
-		user-select: none;
-		width: auto;
-		margin: 0;
+	#burger {
+		display: flex;
+		flex: 0 0 64px;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
 	}
 
-	.burger-icon .burger-sticks {
+	.burger-sticks {
 		background: white;
 		display: block;
-		height: 2px;
+		height: 4px;
+		border-radius: 2px;
 		position: relative;
-		transition: all .2s ease-out;
-		width: 25px;
+		transition: all .3s ease-out;
+		width: 30px;
 	}
 
-	.burger-icon .burger-sticks:before,
-	.burger-icon .burger-sticks:after {
+	.burger-sticks:before, .burger-sticks:after {
 		background: white;
 		content: '';
 		display: block;
 		height: 100%;
+		border-radius: 2px;
 		position: absolute;
-		transition: all .2s ease-out;
+		transition: all .3s ease-out;
 		width: 100%;
 	}
 
-	.burger-icon .burger-sticks:before {
-		top: 8px;
+	.burger-sticks:before {
+		top: 10px;
 	}
 
-	.burger-icon .burger-sticks:after {
-		top: -8px;
+	.burger-sticks:after {
+		top: -10px;
 	}
 
-	.burger-check:checked~#leftSideBar {
-		left: 0;
+	#leftSideBar.open {
+		left: 0px;
 	}
 
-	.burger-check:checked~.burger-icon .burger-sticks {
+	#burger.active~.burger-sticks {
 		background: transparent;
 	}
 

@@ -81,4 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		<md-block src="assets/welcome.md"></md-block>
 		`
 	}
+	
+	document.getElementById('burger').addEventListener('click', function() {
+		this.classList.toggle('active');
+
+		var sidebar = document.getElementById('leftSideBar');
+		sidebar.classList.toggle('open');
+	  });
 });
