@@ -235,8 +235,28 @@ a:visited {
 	overflow: auto;
 }
 
+#patchfield h3 {
+	margin-top: 30px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
 #patchfield ul ::marker {
 	color: var(--main-color);
+}
+
+#patchfield ul {
+	margin: 0;
+	padding-left: 20px;
+}
+
+#patchfield md-block>ul {
+	padding: 20px;
+	padding-left: 40px;
+	box-sizing: border-box;
+	border: 2px solid #272727;
+	background-color: #2B2D31;
+	border-radius: 8px;
 }
 
 #disqus_thread {
