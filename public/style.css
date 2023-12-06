@@ -281,9 +281,9 @@ a:visited {
 }
 
 @media (max-width: 1000px) {
-	body {
+	/* body {
 		font-size: 0.8em;
-	}
+	} */
 
 	.sidebar {
 		transition: .3s ease;
